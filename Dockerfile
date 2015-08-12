@@ -2,7 +2,7 @@ FROM nfnty/arch-mini
 MAINTAINER Apercu <bgronon@gmail.com>
 
 RUN pacman -Syu --needed --noconfirm
-RUN pacman -S sudo make git supervisor systemd nodejs npm nginx mongodb htop --needed --noconfirm
+RUN pacman -S sudo make gcc git supervisor systemd nodejs npm nginx mongodb htop --needed --noconfirm
 
 RUN dirmngr </dev/null
 RUN touch /root/.gnupg/dirmngr_ldapservers.conf
