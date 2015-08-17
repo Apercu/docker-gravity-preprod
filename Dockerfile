@@ -25,6 +25,9 @@ RUN npm i && bower i --allow-root && gulp build
 WORKDIR /home/gravity/gravity-api
 RUN npm i
 
+# Move on top
+ADD nginx.conf /etc/nginx/
+
 RUN mkdir -p /var/log/supervisor
 RUN mkdir -p /etc/supervisor/conf.d
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
