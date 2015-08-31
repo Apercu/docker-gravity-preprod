@@ -31,7 +31,9 @@ RUN mkdir /var/log/gravity
 RUN chown -R nginx:nginx /var/www/{app,backoffice}
 
 RUN mkdir /etc/supervisor
+WORKDIR /etc/supervisor
 COPY supervisord.conf /etc/supervisor/supervisord.conf
+ADD launchapi.sh /etc/supervisor/
 
 EXPOSE 80 8080 3000 3001
 
